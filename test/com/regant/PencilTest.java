@@ -137,4 +137,11 @@ class PencilTest {
         paper = pencil.erase(paper, "wood");
         assertEquals("How much wood would a woodchuck chuck if a     chuck could chuck     ?", paper);
     }
+
+    @Test
+    void aPencilWillNotEraseTextItCannotFind (){
+        paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+        paper = pencil.erase(paper, "stork");
+        assertEquals(paper, paper);
+    }
 }

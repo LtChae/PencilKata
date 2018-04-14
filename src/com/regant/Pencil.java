@@ -45,8 +45,10 @@ public class Pencil {
     public String erase(String paper, String text) {
         int indexOfLastOccurrence = paper.lastIndexOf(text);
         char[] paperCharacters = paper.toCharArray();
-        for (int i = indexOfLastOccurrence; i < indexOfLastOccurrence + text.length(); i++) {
-            paperCharacters[i] = ' ';
+        if (indexOfLastOccurrence >= 0) {
+            for (int i = indexOfLastOccurrence; i < indexOfLastOccurrence + text.length(); i++) {
+                paperCharacters[i] = ' ';
+            }
         }
         return new String(paperCharacters);
     }
