@@ -193,4 +193,11 @@ class PencilTest {
         paper = pencil.edit(paper, "text");
         assertEquals("This is a text", paper);
     }
+
+    @Test
+    void aPencilCanBeUsedToEditAnyExistingText (){
+        paper = "An       a day keeps the doctor away";
+        paper = pencil.edit(paper, "onion");
+        assertEquals("An onion a day keeps the doctor away", paper);
+    }
 }
