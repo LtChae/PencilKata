@@ -107,4 +107,12 @@ class PencilTest {
         pencil.sharpen();
         assertEquals(9, pencil.getLength());
     }
+
+    @Test
+    void sharpeningAPencilWithALengthOfZeroDoesNotRestoreDurability (){
+        Pencil stubbyPencil = new Pencil(100, 0);
+        stubbyPencil.write(paper, "Word");
+        stubbyPencil.sharpen();
+        assertEquals(95, stubbyPencil.getDurability());
+    }
 }
