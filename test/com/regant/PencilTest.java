@@ -11,7 +11,7 @@ class PencilTest {
 
     @BeforeEach
     void setup(){
-        pencil = new Pencil(100, 1);
+        pencil = new Pencil(100, 10);
         paper = "";
     }
 
@@ -93,12 +93,18 @@ class PencilTest {
 
     @Test
     void weCanGetTheLengthOfAPencil (){
-        assertEquals(4, pencil.getLength());
+        assertEquals(10, pencil.getLength());
     }
 
     @Test
     void weCanGetTheLengthOfALongPencil (){
         Pencil longPencil = new Pencil(20, 100);
         assertEquals(100, longPencil.getLength());
+    }
+
+    @Test
+    void sharpeningAPencilDecreasesTheLengthOfAPencilByOne (){
+        pencil.sharpen();
+        assertEquals(9, pencil.getLength());
     }
 }
