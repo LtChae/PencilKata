@@ -7,7 +7,7 @@ public class Pencil {
     }
 
     public String write(String paper, String text) {
-        durability--;
+        durability -= text.length();
         return paper + text;
     }
 
