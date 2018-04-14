@@ -63,4 +63,10 @@ class PencilTest {
         pencil.write(paper, "Assert");
         assertEquals(93, pencil.getDurability());
     }
+
+    @Test
+    void writingASpaceDoesNotDecreaseTheDurabilityOfAPencil (){
+        pencil.write(paper, " ");
+        assertEquals(100, pencil.getDurability());
+    }
 }

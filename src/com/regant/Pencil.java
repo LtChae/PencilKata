@@ -10,7 +10,7 @@ public class Pencil {
         for (char letter: text.toCharArray()) {
             if (Character.isUpperCase(letter)) {
                 durability -= 2;
-            } else {
+            } else if (Character.isLowerCase(letter)){
                 durability -= 1;
             }
         }
