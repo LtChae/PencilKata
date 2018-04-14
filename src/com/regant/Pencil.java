@@ -16,11 +16,7 @@ public class Pencil {
     public String write(String paper, String text) {
         for (char letter: text.toCharArray()) {
             if (tipDurability > 0) {
-                if (Character.isUpperCase(letter)) {
-                    tipDurability -= 2;
-                } else if (Character.isLowerCase(letter)) {
-                    tipDurability -= 1;
-                }
+                wearTip(letter);
                 paper += letter;
             } else {
                 paper += " ";
@@ -74,11 +70,7 @@ public class Pencil {
         if (indexOfFirstBlankSpace >= 0) {
             for (int i = indexOfFirstBlankSpace; i < replacementText.length() + indexOfFirstBlankSpace; i++) {
                 char letter = replacementCharacters[i - indexOfFirstBlankSpace];
-                if (Character.isUpperCase(letter)) {
-                    tipDurability -= 2;
-                } else if (Character.isLowerCase(letter)) {
-                    tipDurability -= 1;
-                }
+                wearTip(letter);
                 if (paperCharacters[i] == ' ') {
                     paperCharacters[i] = letter;
                 } else {
@@ -88,5 +80,13 @@ public class Pencil {
             }
         }
         return new String(paperCharacters);
+    }
+
+    private void wearTip(char letter) {
+        if (Character.isUpperCase(letter)) {
+            tipDurability -= 2;
+        } else if (Character.isLowerCase(letter)) {
+            tipDurability -= 1;
+        }
     }
 }
