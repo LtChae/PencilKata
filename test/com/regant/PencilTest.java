@@ -57,4 +57,10 @@ class PencilTest {
         pencil.write(paper, "A");
         assertEquals(98, pencil.getDurability());
     }
+
+    @Test
+    void writingAMixedCaseStringDecreasesTheDurabilityOfAPencilByTheAppropriateAmount (){
+        pencil.write(paper, "Assert");
+        assertEquals(93, pencil.getDurability());
+    }
 }
