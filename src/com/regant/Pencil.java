@@ -5,7 +5,7 @@ public class Pencil {
     private int initialDurability;
     private int length;
 
-    public Pencil(int durability, int length) {
+    public Pencil(int durability, int length, int eraserDurability) {
         this.durability = durability;
         this.initialDurability = durability;
         this.length = length;
@@ -51,5 +51,9 @@ public class Pencil {
             }
         }
         return new String(paperCharacters);
+    }
+
+    public int getEraserDurability() {
+        return 50;
     }
 }

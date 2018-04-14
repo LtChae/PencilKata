@@ -11,7 +11,7 @@ class PencilTest {
 
     @BeforeEach
     void setup(){
-        pencil = new Pencil(100, 10);
+        pencil = new Pencil(100, 10, 50);
         paper = "";
     }
 
@@ -72,14 +72,14 @@ class PencilTest {
 
     @Test
     void aPencilWithoutDurabilityWritesSpacesInsteadOfCharacters (){
-        Pencil dullPencil = new Pencil(0, 1);
+        Pencil dullPencil = new Pencil(0, 1, 50);
         paper = dullPencil.write(paper, "This");
         assertEquals("    ", paper);
     }
 
     @Test
     void aPencilWritesSpacesInsteadOfCharactersAfterRunningOutOfDurability (){
-        Pencil dullPencil = new Pencil(4, 1);
+        Pencil dullPencil = new Pencil(4, 1, 50);
         paper = dullPencil.write(paper, "This");
         assertEquals("Thi ", paper);
     }
@@ -98,7 +98,7 @@ class PencilTest {
 
     @Test
     void weCanGetTheLengthOfALongPencil (){
-        Pencil longPencil = new Pencil(20, 100);
+        Pencil longPencil = new Pencil(20, 100, 50);
         assertEquals(100, longPencil.getLength());
     }
 
@@ -110,7 +110,7 @@ class PencilTest {
 
     @Test
     void sharpeningAPencilWithALengthOfZeroDoesNotRestoreDurability (){
-        Pencil stubbyPencil = new Pencil(100, 0);
+        Pencil stubbyPencil = new Pencil(100, 0, 50);
         stubbyPencil.write(paper, "Word");
         stubbyPencil.sharpen();
         assertEquals(95, stubbyPencil.getDurability());
@@ -143,5 +143,11 @@ class PencilTest {
         paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
         paper = pencil.erase(paper, "stork");
         assertEquals(paper, paper);
+    }
+
+    @Test
+    void aPencilCanBeCreatedWithAnEraserDurabilityAndWeCanGetIt (){
+        Pencil pencilWithEraser = new Pencil(100, 100, 50);
+        assertEquals(50, pencilWithEraser.getEraserDurability());
     }
 }
