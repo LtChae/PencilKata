@@ -49,6 +49,7 @@ public class Pencil {
         char[] paperCharacters = paper.toCharArray();
         if (indexOfLastOccurrence >= 0) {
             for (int i = indexOfLastOccurrence; i < indexOfLastOccurrence + text.length(); i++) {
+                eraserDurability--;
                 paperCharacters[i] = ' ';
             }
         }

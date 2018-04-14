@@ -156,4 +156,11 @@ class PencilTest {
         Pencil pencilWithEraser = new Pencil(100, 100, 1000);
         assertEquals(1000, pencilWithEraser.getEraserDurability());
     }
+
+    @Test
+    void whenTextIsErasedTheEraserDurabilityIsDecreasedByOnePerCharacter (){
+        paper = "This is a test";
+        pencil.erase(paper, "test");
+        assertEquals(46, pencil.getEraserDurability());
+    }
 }
