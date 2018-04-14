@@ -178,4 +178,12 @@ class PencilTest {
         paper = pencilWithWornEraser.erase(paper, "a test");
         assertEquals("This is a t   ", paper);
     }
+
+    @Test
+    void whenAnEraserStartsWithNoDurabilityNothingIsErased (){
+        Pencil pencilWithWornEraser = new Pencil(100, 100, 3);
+        paper = "This is a test";
+        paper = pencilWithWornEraser.erase(paper, "a test");
+        assertEquals(paper, paper);
+    }
 }
