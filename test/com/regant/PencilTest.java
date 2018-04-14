@@ -69,4 +69,11 @@ class PencilTest {
         pencil.write(paper, " ");
         assertEquals(100, pencil.getDurability());
     }
+
+    @Test
+    void aPencilWithoutDurabilityWritesSpacesInsteadOfCharacters (){
+        Pencil dullPencil = new Pencil(0);
+        paper = dullPencil.write(paper, "This");
+        assertEquals("    ", paper);
+    }
 }
