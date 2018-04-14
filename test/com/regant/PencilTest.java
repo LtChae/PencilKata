@@ -47,8 +47,14 @@ class PencilTest {
     }
 
     @Test
-    void writingASeriesOfLowerCaseLetterDecreasesTheDurabilityOfAPencilByOnePerLetter (){
+    void writingASeriesOfLowerCaseLettersDecreasesTheDurabilityOfAPencilByOnePerLetter (){
         pencil.write(paper, "series");
         assertEquals(94, pencil.getDurability());
+    }
+
+    @Test
+    void writingAnUpperCaseLetterDecreasesTheDurabilityOfAPencilByTwo (){
+        pencil.write(paper, "A");
+        assertEquals(98, pencil.getDurability());
     }
 }
