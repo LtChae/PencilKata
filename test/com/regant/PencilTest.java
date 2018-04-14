@@ -186,4 +186,11 @@ class PencilTest {
         paper = pencilWithWornEraser.erase(paper, "a test");
         assertEquals(paper, paper);
     }
+
+    @Test
+    void aPencilCanBeUsedToEditExistingText (){
+        paper = "This is a     ";
+        paper = pencil.edit(paper, "text");
+        assertEquals("This is a text", paper);
+    }
 }

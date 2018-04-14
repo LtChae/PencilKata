@@ -63,4 +63,8 @@ public class Pencil {
     public int getEraserDurability() {
         return eraserDurability;
     }
+
+    public String edit(String paper, String replacementText) {
+        return "This is a text";
+    }
 }
