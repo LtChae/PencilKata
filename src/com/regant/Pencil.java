@@ -73,8 +73,14 @@ public class Pencil {
         }
         if (indexOfFirstBlankSpace >= 0) {
             for (int i = indexOfFirstBlankSpace; i < replacementText.length() + indexOfFirstBlankSpace; i++) {
+                char letter = replacementCharacters[i - indexOfFirstBlankSpace];
+                if (Character.isUpperCase(letter)) {
+                    tipDurability -= 2;
+                } else if (Character.isLowerCase(letter)) {
+                    tipDurability -= 1;
+                }
                 if (paperCharacters[i] == ' ') {
-                    paperCharacters[i] = replacementCharacters[i - indexOfFirstBlankSpace];
+                    paperCharacters[i] = letter;
                 } else {
                     paperCharacters[i] = '@';
                 }

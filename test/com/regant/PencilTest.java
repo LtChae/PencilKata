@@ -214,4 +214,11 @@ class PencilTest {
         paper = pencil.edit(paper, "El");
         assertEquals("El onion a day keeps the doctor away", paper);
     }
+
+    @Test
+    void whenAPencilEditsTextItConsumesTipDurability (){
+        paper = "   onion a day keeps the doctor away";
+        paper = pencil.edit(paper, "El");
+        assertEquals(97, pencil.getTipDurability());
+    }
 }
