@@ -70,7 +70,12 @@ public class Pencil {
         char[] replacementCharacters = replacementText.toCharArray();
         if (indexOfFirstBlankSpace >= 0) {
             for (int i = indexOfFirstBlankSpace; i < replacementText.length() + indexOfFirstBlankSpace; i++) {
-                paperCharacters[i] = replacementCharacters[i - indexOfFirstBlankSpace];
+                if (paperCharacters[i] == ' ') {
+                    paperCharacters[i] = replacementCharacters[i - indexOfFirstBlankSpace];
+                } else {
+                    paperCharacters[i] = '@';
+                }
+
             }
         }
         return new String(paperCharacters);

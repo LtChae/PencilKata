@@ -200,4 +200,11 @@ class PencilTest {
         paper = pencil.edit(paper, "onion");
         assertEquals("An onion a day keeps the doctor away", paper);
     }
+
+    @Test
+    void whenAPencilEditsTextIntoASpaceThatIsTooSmallItAddsASpecificCharacter (){
+        paper = "An       a day keeps the doctor away";
+        paper = pencil.edit(paper, "artichoke");
+        assertEquals("An artich@k@ay keeps the doctor away", paper);
+    }
 }
