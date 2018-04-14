@@ -163,4 +163,11 @@ class PencilTest {
         pencil.erase(paper, "test");
         assertEquals(46, pencil.getEraserDurability());
     }
+
+    @Test
+    void whenTextIsErasedTheEraserDurabilityIsNotDecreasedForWhitespace (){
+        paper = "This is a test";
+        pencil.erase(paper, "a test");
+        assertEquals(45, pencil.getEraserDurability());
+    }
 }
