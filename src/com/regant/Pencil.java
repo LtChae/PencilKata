@@ -2,24 +2,24 @@ package com.regant;
 
 public class Pencil {
     private int eraserDurability;
-    private int durability;
-    private int initialDurability;
+    private int tipDurability;
+    private int initialTipDurability;
     private int length;
 
-    public Pencil(int durability, int length, int eraserDurability) {
-        this.durability = durability;
-        this.initialDurability = durability;
+    public Pencil(int tipDurability, int length, int eraserDurability) {
+        this.tipDurability = tipDurability;
+        this.initialTipDurability = tipDurability;
         this.length = length;
         this.eraserDurability = eraserDurability;
     }
 
     public String write(String paper, String text) {
         for (char letter: text.toCharArray()) {
-            if (durability > 0) {
+            if (tipDurability > 0) {
                 if (Character.isUpperCase(letter)) {
-                    durability -= 2;
+                    tipDurability -= 2;
                 } else if (Character.isLowerCase(letter)) {
-                    durability -= 1;
+                    tipDurability -= 1;
                 }
                 paper += letter;
             } else {
@@ -29,14 +29,14 @@ public class Pencil {
         return paper;
     }
 
-    public int getDurability() {
-        return durability;
+    public int getTipDurability() {
+        return tipDurability;
     }
 
     public void sharpen() {
         if (length > 0) {
             length--;
-            durability = initialDurability;
+            tipDurability = initialTipDurability;
         }
     }
 

@@ -37,37 +37,37 @@ class PencilTest {
 
     @Test
     void weCanGetTheDurabilityOfAPencil (){
-        assertEquals(100, pencil.getDurability());
+        assertEquals(100, pencil.getTipDurability());
     }
 
     @Test
     void writingALowerCaseLetterDecreasesTheDurabilityOfAPencilByOne (){
         pencil.write(paper, "a");
-        assertEquals(99, pencil.getDurability());
+        assertEquals(99, pencil.getTipDurability());
     }
 
     @Test
     void writingASeriesOfLowerCaseLettersDecreasesTheDurabilityOfAPencilByOnePerLetter (){
         pencil.write(paper, "series");
-        assertEquals(94, pencil.getDurability());
+        assertEquals(94, pencil.getTipDurability());
     }
 
     @Test
     void writingAnUpperCaseLetterDecreasesTheDurabilityOfAPencilByTwo (){
         pencil.write(paper, "A");
-        assertEquals(98, pencil.getDurability());
+        assertEquals(98, pencil.getTipDurability());
     }
 
     @Test
     void writingAMixedCaseStringDecreasesTheDurabilityOfAPencilByTheAppropriateAmount (){
         pencil.write(paper, "Assert");
-        assertEquals(93, pencil.getDurability());
+        assertEquals(93, pencil.getTipDurability());
     }
 
     @Test
     void writingASpaceDoesNotDecreaseTheDurabilityOfAPencil (){
         pencil.write(paper, " ");
-        assertEquals(100, pencil.getDurability());
+        assertEquals(100, pencil.getTipDurability());
     }
 
     @Test
@@ -88,7 +88,7 @@ class PencilTest {
     void aPencilCanBeResharpenedToItsOriginalDurability (){
         pencil.write(paper, "This is a test");
         pencil.sharpen();
-        assertEquals(100, pencil.getDurability());
+        assertEquals(100, pencil.getTipDurability());
     }
 
     @Test
@@ -113,7 +113,7 @@ class PencilTest {
         Pencil stubbyPencil = new Pencil(100, 0, 50);
         stubbyPencil.write(paper, "Word");
         stubbyPencil.sharpen();
-        assertEquals(95, stubbyPencil.getDurability());
+        assertEquals(95, stubbyPencil.getTipDurability());
     }
 
     @Test
