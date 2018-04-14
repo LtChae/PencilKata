@@ -11,7 +11,7 @@ class PencilTest {
 
     @BeforeEach
     void setup(){
-        pencil = new Pencil(100);
+        pencil = new Pencil(100, 1);
         paper = "";
     }
 
@@ -72,14 +72,14 @@ class PencilTest {
 
     @Test
     void aPencilWithoutDurabilityWritesSpacesInsteadOfCharacters (){
-        Pencil dullPencil = new Pencil(0);
+        Pencil dullPencil = new Pencil(0, 1);
         paper = dullPencil.write(paper, "This");
         assertEquals("    ", paper);
     }
 
     @Test
     void aPencilWritesSpacesInsteadOfCharactersAfterRunningOutOfDurability (){
-        Pencil dullPencil = new Pencil(4);
+        Pencil dullPencil = new Pencil(4, 1);
         paper = dullPencil.write(paper, "This");
         assertEquals("Thi ", paper);
     }
@@ -94,5 +94,11 @@ class PencilTest {
     @Test
     void weCanGetTheLengthOfAPencil (){
         assertEquals(4, pencil.getLength());
+    }
+
+    @Test
+    void weCanGetTheLengthOfALongPencil (){
+        Pencil longPencil = new Pencil(20, 100);
+        assertEquals(100, longPencil.getLength());
     }
 }

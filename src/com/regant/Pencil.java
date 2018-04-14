@@ -3,9 +3,12 @@ package com.regant;
 public class Pencil {
     private int durability;
     private int initialDurability;
-    public Pencil(int durability) {
+    private int length;
+
+    public Pencil(int durability, int length) {
         this.durability = durability;
         this.initialDurability = durability;
+        this.length = length;
     }
 
     public String write(String paper, String text) {
@@ -33,6 +36,6 @@ public class Pencil {
     }
 
     public int getLength() {
-        return 4;
+        return length;
     }
 }
