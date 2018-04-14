@@ -207,4 +207,11 @@ class PencilTest {
         paper = pencil.edit(paper, "artichoke");
         assertEquals("An artich@k@ay keeps the doctor away", paper);
     }
+
+    @Test
+    void whenAPencilEditsTextIntoASpaceAtTheFrontOfThePaperItStartsAtTheFirstSpace (){
+        paper = "   onion a day keeps the doctor away";
+        paper = pencil.edit(paper, "El");
+        assertEquals("El onion a day keeps the doctor away", paper);
+    }
 }

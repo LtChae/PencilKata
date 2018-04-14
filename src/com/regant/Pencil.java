@@ -65,9 +65,12 @@ public class Pencil {
     }
 
     public String edit(String paper, String replacementText) {
-        int indexOfFirstBlankSpace = paper.indexOf("  ") + 1;
+        int indexOfFirstBlankSpace = paper.indexOf("  ");
         char[] paperCharacters = paper.toCharArray();
         char[] replacementCharacters = replacementText.toCharArray();
+        if (indexOfFirstBlankSpace != 0){
+            indexOfFirstBlankSpace++;
+        }
         if (indexOfFirstBlankSpace >= 0) {
             for (int i = indexOfFirstBlankSpace; i < replacementText.length() + indexOfFirstBlankSpace; i++) {
                 if (paperCharacters[i] == ' ') {
