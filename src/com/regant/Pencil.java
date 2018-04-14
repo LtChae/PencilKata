@@ -43,6 +43,11 @@ public class Pencil {
     }
 
     public String erase(String paper, String text) {
-        return "How much wood would a woodchuck chuck if a woodchuck could       wood?";
+        int indexOfLastOccurrence = paper.lastIndexOf(text);
+        char[] paperCharacters = paper.toCharArray();
+        for (int i = indexOfLastOccurrence; i < indexOfLastOccurrence + text.length(); i++) {
+            paperCharacters[i] = ' ';
+        }
+        return new String(paperCharacters);
     }
 }

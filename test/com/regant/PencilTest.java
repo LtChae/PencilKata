@@ -122,4 +122,11 @@ class PencilTest {
         paper = pencil.erase(paper, "chuck");
         assertEquals("How much wood would a woodchuck chuck if a woodchuck could       wood?", paper);
     }
+
+    @Test
+    void aPencilCanEraseTheLastOccurrenceOfDifferentTextFromAPaper (){
+        paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+        paper = pencil.erase(paper, "could");
+        assertEquals("How much wood would a woodchuck chuck if a woodchuck       chuck wood?", paper);
+    }
 }
