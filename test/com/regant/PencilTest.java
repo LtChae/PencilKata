@@ -27,4 +27,11 @@ class PencilTest {
         paper = pencil.write(paper, exampleString);
         assertEquals(exampleString, paper);
     }
+
+    @Test
+    void aPencilCanWriteTextToAPaperTwiceAndAppend (){
+        paper = pencil.write(paper, "In the beginning,");
+        paper = pencil.write(paper, " there was a pencil.");
+        assertEquals("In the beginning, there was a pencil.", paper);
+    }
 }
