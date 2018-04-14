@@ -48,11 +48,13 @@ public class Pencil {
         int indexOfLastOccurrence = paper.lastIndexOf(text);
         char[] paperCharacters = paper.toCharArray();
         if (indexOfLastOccurrence >= 0) {
-            for (int i = indexOfLastOccurrence; i < indexOfLastOccurrence + text.length(); i++) {
-                if (paperCharacters[i] != ' ') {
-                    eraserDurability--;
+            for (int i = indexOfLastOccurrence + text.length() - 1; i >= indexOfLastOccurrence; i--) {
+                if (eraserDurability > 0) {
+                    if (paperCharacters[i] != ' ') {
+                        eraserDurability--;
+                    }
+                    paperCharacters[i] = ' ';
                 }
-                paperCharacters[i] = ' ';
             }
         }
         return new String(paperCharacters);

@@ -170,4 +170,12 @@ class PencilTest {
         pencil.erase(paper, "a test");
         assertEquals(45, pencil.getEraserDurability());
     }
+
+    @Test
+    void whenAnEraserRunsOutOfDurabilityItStopsErasingInTheOppositeOrderOfWriting (){
+        Pencil pencilWithWornEraser = new Pencil(100, 100, 3);
+        paper = "This is a test";
+        paper = pencilWithWornEraser.erase(paper, "a test");
+        assertEquals("This is a t   ", paper);
+    }
 }
