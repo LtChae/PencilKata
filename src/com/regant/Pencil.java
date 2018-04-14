@@ -2,8 +2,10 @@ package com.regant;
 
 public class Pencil {
     private int durability;
+    private int initialDurability;
     public Pencil(int durability) {
         this.durability = durability;
+        this.initialDurability = durability;
     }
 
     public String write(String paper, String text) {
@@ -24,5 +26,9 @@ public class Pencil {
 
     public int getDurability() {
         return durability;
+    }
+
+    public void sharpen() {
+        durability = initialDurability;
     }
 }

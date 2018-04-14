@@ -83,4 +83,11 @@ class PencilTest {
         paper = dullPencil.write(paper, "This");
         assertEquals("Thi ", paper);
     }
+
+    @Test
+    void aPencilCanBeResharpenedToItsOriginalDurability (){
+        pencil.write(paper, "This is a test");
+        pencil.sharpen();
+        assertEquals(100, pencil.getDurability());
+    }
 }
