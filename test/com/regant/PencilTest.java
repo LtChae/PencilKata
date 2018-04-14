@@ -39,4 +39,10 @@ class PencilTest {
     void weCanGetTheDurabilityOfAPencil (){
         assertEquals(100, pencil.getDurability());
     }
+
+    @Test
+    void writingALowerCaseLetterDecreasesTheDurabilityOfAPencilByOne (){
+        pencil.write(paper, "a");
+        assertEquals(99, pencil.getDurability());
+    }
 }
