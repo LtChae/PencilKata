@@ -221,4 +221,11 @@ class PencilTest {
         paper = pencil.edit(paper, "El");
         assertEquals(97, pencil.getTipDurability());
     }
+
+    @Test
+    void aPencilWillNotEditAPaperIfThereIsNoBlankSpace (){
+        paper = "An onion a day keeps the doctor away";
+        paper = pencil.edit(paper, "El");
+        assertEquals(paper, paper);
+    }
 }
