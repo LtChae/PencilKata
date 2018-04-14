@@ -150,4 +150,10 @@ class PencilTest {
         Pencil pencilWithEraser = new Pencil(100, 100, 50);
         assertEquals(50, pencilWithEraser.getEraserDurability());
     }
+
+    @Test
+    void aPencilCanBeCreatedWithALargeEraserDurabilityAndWeCanGetIt (){
+        Pencil pencilWithEraser = new Pencil(100, 100, 1000);
+        assertEquals(1000, pencilWithEraser.getEraserDurability());
+    }
 }

@@ -1,6 +1,7 @@
 package com.regant;
 
 public class Pencil {
+    private int eraserDurability;
     private int durability;
     private int initialDurability;
     private int length;
@@ -9,6 +10,7 @@ public class Pencil {
         this.durability = durability;
         this.initialDurability = durability;
         this.length = length;
+        this.eraserDurability = eraserDurability;
     }
 
     public String write(String paper, String text) {
@@ -54,6 +56,6 @@ public class Pencil {
     }
 
     public int getEraserDurability() {
-        return 50;
+        return eraserDurability;
     }
 }
