@@ -115,4 +115,11 @@ class PencilTest {
         stubbyPencil.sharpen();
         assertEquals(95, stubbyPencil.getDurability());
     }
+
+    @Test
+    void aPencilCanEraseTheLastOccurrenceOfTextFromAPaper (){
+        paper = "How much wood would a woodchuck chuck if a woodchuck could chuck wood?";
+        paper = pencil.erase(paper, "chuck");
+        assertEquals("How much wood would a woodchuck chuck if a woodchuck could       wood?", paper);
+    }
 }

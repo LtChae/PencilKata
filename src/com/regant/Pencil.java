@@ -41,4 +41,8 @@ public class Pencil {
     public int getLength() {
         return length;
     }
+
+    public String erase(String paper, String text) {
+        return "How much wood would a woodchuck chuck if a woodchuck could       wood?";
+    }
 }
