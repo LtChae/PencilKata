@@ -90,4 +90,9 @@ class PencilTest {
         pencil.sharpen();
         assertEquals(100, pencil.getDurability());
     }
+
+    @Test
+    void weCanGetTheLengthOfAPencil (){
+        assertEquals(4, pencil.getLength());
+    }
 }
