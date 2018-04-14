@@ -11,7 +11,7 @@ class PencilTest {
 
     @BeforeEach
     void setup(){
-        pencil = new Pencil();
+        pencil = new Pencil(100);
         paper = "";
     }
 
@@ -33,5 +33,10 @@ class PencilTest {
         paper = pencil.write(paper, "In the beginning,");
         paper = pencil.write(paper, " there was a pencil.");
         assertEquals("In the beginning, there was a pencil.", paper);
+    }
+
+    @Test
+    void weCanGetTheDurabilityOfAPencil (){
+        assertEquals(100, pencil.getDurability());
     }
 }
